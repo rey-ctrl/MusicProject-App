@@ -1,0 +1,144 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/black_black"
+    tools:context=".ProfileEditActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/container_title">
+
+        <!-- Tombol Back -->
+        <ImageButton
+            android:id="@+id/btn_back"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:src="@drawable/ic_back_white"
+            android:background="@android:color/transparent"
+            android:layout_marginTop="12dp"
+            android:onClick="onBackButtonClick" />
+
+        <TextView
+            android:id="@+id/edit_profile_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Edit Profile"
+            android:textSize="24sp"
+            android:layout_centerInParent="true"
+            android:layout_below="@id/btn_back"
+            android:fontFamily="@font/poppinsbold"
+            android:textColor="@color/white"
+            android:layout_marginBottom="8dp" />
+
+    </RelativeLayout>
+
+    <!-- FrameLayout for Profile Picture and Edit Icon -->
+    <FrameLayout
+        android:layout_width="176dp"
+        android:layout_height="175dp"
+        android:layout_below="@id/container_title"
+        android:layout_centerHorizontal="true"
+        android:layout_gravity="center"
+        android:layout_marginTop="22dp">
+
+        <!-- Gambar Profil -->
+        <com.makeramen.roundedimageview.RoundedImageView
+            android:id="@+id/editProfilePicture"
+            android:layout_width="175dp"
+            android:layout_height="175dp"
+            android:background="@drawable/light_bg"
+            android:scaleType="centerCrop"
+            android:src="@mipmap/ic_launcher"
+            android:orientation="vertical"
+            app:cardCornerRadius="175dp" />
+
+        <!-- Ikon Pensil -->
+        <ImageView
+            android:id="@+id/editProfileIcon"
+            android:layout_width="18dp"
+            android:layout_height="18dp"
+            android:layout_gravity="top|right"
+            android:layout_marginBottom="4dp"
+            android:background="@color/black_black"
+            android:src="@drawable/ic_edit_square" />
+
+
+    </FrameLayout>
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="30dp"
+            android:layout_marginEnd="30dp"
+            android:layout_marginTop="340dp">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/nameTil"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:hintEnabled="false">
+
+                    <EditText
+                        android:id="@+id/nameEt"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/shape_edit_text01"
+                        android:drawableStart="@drawable/ic_person"
+                        android:drawablePadding="10dp"
+                        android:hint="Name"
+                        android:inputType="textPersonName|textCapWords"
+                        android:padding="10dp"
+                        android:textColor="@color/black"
+                        android:fontFamily="@font/poppinsregular" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <!--BUTTON-->
+                <Button
+                    android:id="@+id/updateBtn"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/nameTil"
+                    android:layout_marginTop="50dp"
+                    android:background="@drawable/shape_button01"
+                    android:gravity="center"
+                    android:text="Update"
+                    android:textColor="@color/black_black"
+                    android:fontFamily="@font/poppinsbold"
+                    android:textSize="16sp"
+                    android:elevation="0dp"
+                    android:outlineProvider="none"/>
+
+
+                <!--BUTTON-->
+                <Button
+                    android:id="@+id/deleteProfilePictureBtn"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/updateBtn"
+                    android:layout_marginTop="20dp"
+                    android:background="@drawable/shape_button02"
+                    android:gravity="center"
+                    android:text="Delete Profile"
+                    android:textColor="@color/blue"
+                    android:fontFamily="@font/poppinssemibold"
+                    android:textSize="16sp"
+                    android:elevation="0dp"
+                    android:outlineProvider="none"/>
+
+
+            </RelativeLayout>
+
+        </ScrollView>
+
+
+
+</RelativeLayout>
